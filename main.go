@@ -11,7 +11,7 @@ func main() {
 		info := &http.Cookie{
 			Name:    "operation",
 			Value:   "gitops",
-			Domain:  "api.luanngominh.me",
+			Domain:  "luanngominh.me",
 			Expires: time.Now().Add(time.Hour * 1000),
 		}
 
