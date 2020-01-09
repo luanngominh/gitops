@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops
+  namespace: flux
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: gitops
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: gitops
+    spec:
+      containers:
+      - name: gitops
+        image: luanngominh/gitops:0.0.1
+        ports:
+        - containerPort: 8080
