@@ -4,7 +4,7 @@ test:
 	go test ./...
 
 build:
-	mkdir -p bin
+	@mkdir -p bin
 	go build -o bin/gitops
 
 dev: build

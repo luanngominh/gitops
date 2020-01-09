@@ -11,7 +11,7 @@ func main() {
 		info := &http.Cookie{
 			Name:    "operation",
 			Value:   "gitops",
-			Domain:  "luanngominh.me",
+			Domain:  "api.luanngominh.me",
 			Expires: time.Now().Add(time.Hour * 1000),
 		}
 
@@ -27,7 +27,7 @@ func main() {
 
 	errs := make(chan error)
 
-	fmt.Println("Server starting on port 8080...")
+	fmt.Println("Server starting on port 8080 ...")
 
 	go func() {
 		errs <- http.ListenAndServe("0.0.0.0:8080", nil)
@@ -36,6 +36,6 @@ func main() {
 	fmt.Println("Server started on port 8080, listen and serve request")
 
 	if err := <-errs; err != nil {
-		fmt.Println("Running server with error %v", err)
+		fmt.Printf("\nRunning server with error:\n%v", err)
 	}
 }
