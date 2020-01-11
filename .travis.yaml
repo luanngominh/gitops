@@ -1,7 +1,16 @@
 language: go
+os: linux
 
-services:
-  - docker
+jobs:
+  include:
+    - stage: "build"
+      name: "Delivery to docker hub"
+      services:
+        - docker
+      script:
+        - dockerpass=`echo $DOCKER_PASSWORD | base64 -d`
+        - dockeruser=`echo $DOCKER_USERNAME | base64 -d`
+        - echo "$dockerpass" | docker login -u "$dockeruser" --password-stdin
+        - sh build.sh
+      
 
-script:
-  - sh build.sh
