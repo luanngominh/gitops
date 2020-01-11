@@ -13,7 +13,15 @@ jobs:
       script:
         - dockerpass=`echo $DOCKER_PASSWORD | base64 -d`
         - dockeruser=`echo $DOCKER_USER | base64 -d`
-        - echo "$dockerpass" | docker login -u "$dockeruser" --password-stdin
+        - echo "$dockerpass" | docker login --username "$dockeruser" --password-stdin
         - /bin/bash build.sh
-      
+
+
+notifications:
+   email:
+      recipients:
+      - ngominhluanbox@gmail.com
+      on_success: always
+      on_failure: always
+
 
