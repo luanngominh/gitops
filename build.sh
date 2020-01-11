@@ -1,5 +1,12 @@
 #!/bin/bash
 
+echo $TOKEN | docker login --username luanngominh --password-stdin
+
+if [[ $? != 0 ]]; then
+    echo "Login to docker hub error"
+    exit 1
+fi
+
 DOCKER_TAG="latest"
 
 short_commit=`git rev-parse --short HEAD`
