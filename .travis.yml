@@ -13,7 +13,7 @@ jobs:
       script:
         - dockerpass=`echo $DOCKER_PASSWORD | base64 -d`
         - dockeruser=`echo $DOCKER_USERNAME | base64 -d`
-        - echo "$dockerpass" | docker login -u "$dockeruser" --password-stdin
+        - echo "$dockerpass" | docker login --username "$dockeruser" --password-stdin
         - /bin/bash build.sh
       
 
