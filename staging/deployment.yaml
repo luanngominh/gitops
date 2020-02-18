@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-webserver
+  namespace: gitops
+spec:
+  selector:
+    matchLabels:
+      app: gitops-webserver
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: gitops-webserver
+    spec:
+      containers:
+      - name: gitops-webserver
+        image: luanngominh/gitops:7639692
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred

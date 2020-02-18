@@ -12,3 +12,4 @@ dev: build
 
 delivery:
 	sh build.sh
+
