@@ -13,3 +13,6 @@
 
 */**.env
 bin
+
+# Ignore flux private key
+id_rsa

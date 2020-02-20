@@ -15,11 +15,11 @@ if [[ $? == 0 || `echo ${short_commit} | wc -c` != 8 ]]; then
 fi
 
 echo "Build docker image with tag ${short_commit}"
-docker build -t luanngominh/gitops:${short_commit} .
+docker build -t luanngominh/gitops:${TRAVIS_BRANCH}-${short_commit} .
 
 if [[ $? != 0 ]]; then
     echo "Build docker image error!"
     exit 1
 fi
 
-docker push luanngominh/gitops:${short_commit}
+docker push luanngominh/gitops:${TRAVIS_BRANCH}-${short_commit}
