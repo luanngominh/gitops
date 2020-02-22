@@ -1,3 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    name: flux
+  name: flux
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -135,6 +142,8 @@ spec:
         # memcached-service to string empty
         - --memcached-service=
 
+        - --sync-interval=10s
+
         # This must be supplied, and be in the tmpfs (emptyDir)
         # mounted above, for K8s >= 1.10
         - --ssh-keygen-dir=/var/fluxd/keygen
@@ -144,7 +153,7 @@ spec:
         # https://$(GIT_AUTHUSER):$(GIT_AUTHKEY)@github.com/user/repository.git
         - --git-url=git@github.com:luanngominh/gitops
         - --git-branch=master
-        - --git-path=namespaces,staging,prod
+        - --git-path=namespaces,staging
         - --git-label=flux
         - --git-user=luanngominh
         - --git-email=ngominhluanbox@gmail.com

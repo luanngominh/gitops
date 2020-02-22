@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: gitops-webserver
   namespace: gitops
-annotations:
-  fluxcd.io/automated: "true"
-  fluxcd.io/gitops-webserver: glob:master-*
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/gitops-webserver: glob:master-*
 spec:
   selector:
     matchLabels:
