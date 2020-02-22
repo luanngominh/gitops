@@ -17,7 +17,7 @@ func main() {
 
 		http.SetCookie(res, info)
 		res.WriteHeader(http.StatusOK)
-		res.Write([]byte("The first time with GitOps"))
+		res.Write([]byte("The first time with GitOps v1"))
 	})
 
 	http.HandleFunc("/healthz", func(res http.ResponseWriter, req *http.Request) {
