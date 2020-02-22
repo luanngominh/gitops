@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: nginx:1.16-perl
+        image: nginx:1.16
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
