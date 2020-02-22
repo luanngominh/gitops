@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: luanngominh/gitops:master-6015dfc
+        image: luanngominh/gitops:master-0b6ef34
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
