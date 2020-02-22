@@ -17,12 +17,12 @@ func main() {
 
 		http.SetCookie(res, info)
 		res.WriteHeader(http.StatusOK)
-		res.Write([]byte("The first time with GitOps v1"))
+		res.Write([]byte("The first time with GitOps"))
 	})
 
 	http.HandleFunc("/healthz", func(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusOK)
-		res.Write([]byte("Version 0.0.1"))
+		res.Write([]byte("Version 0.0.2"))
 	})
 
 	errs := make(chan error)
