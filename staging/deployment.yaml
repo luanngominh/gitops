@@ -5,7 +5,7 @@ metadata:
   namespace: gitops
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/gitops-webserver: glob:master-*
+    fluxcd.io/webserver: glob:master-*
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
         app: gitops-webserver
     spec:
       containers:
-      - name: gitops-webserver
+      - name: webserver
         image: luanngominh/gitops:7639692
         imagePullPolicy: IfNotPresent
         ports:
