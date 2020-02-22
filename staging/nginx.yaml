@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: gitops
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/webserver: regexp:^1.1*
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: webserver
+        image: nginx:1.17
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
