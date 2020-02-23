@@ -142,8 +142,8 @@ spec:
         # memcached-service to string empty
         - --memcached-service=
 
-        - --sync-interval=5s
-        - --git-poll-interval=10s
+        - --sync-interval=10s
+        - --git-poll-interval=10sm
         - --automation-interval=10s
 
         # This must be supplied, and be in the tmpfs (emptyDir)
