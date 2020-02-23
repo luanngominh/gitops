@@ -143,7 +143,7 @@ spec:
         - --memcached-service=
 
         - --sync-interval=10s
-        - --git-poll-interval=10sm
+        - --git-poll-interval=10s
         - --automation-interval=10s
 
         # This must be supplied, and be in the tmpfs (emptyDir)
