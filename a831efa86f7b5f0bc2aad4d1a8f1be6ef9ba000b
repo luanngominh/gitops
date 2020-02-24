@@ -1,0 +1,1 @@
+{"jobID":"9202bb26-b237-8963-a56a-1ab2cdf2ed70","spec":{"type":"policy","cause":{"Message":"","User":"luanngominh \u003cluannm2@vng.com.vn\u003e"},"spec":{"gitops:deployment/gitops-webserver":{"add":{"automated":"true"},"remove":{}}}},"result":null}
