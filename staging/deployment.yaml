@@ -6,6 +6,7 @@ metadata:
   namespace: gitops
   annotations:
     fluxcd.io/webserver: glob:master-*
+    fluxcd.io/automated: 'true'
 spec:
   selector:
     matchLabels:
