@@ -5,7 +5,6 @@ metadata:
   name: gitops-webserver
   namespace: gitops
   annotations:
-    fluxcd.io/automated: "true"
     fluxcd.io/webserver: glob:master-*
 spec:
   selector:
