@@ -5,5 +5,18 @@
 Sample project, using flux to delivery app to kubernetes cluster
 
 # Usage
-* Create docker registry secret: sh run.sh
 * Change {{ DEPLOY_KEY }} in flux.yaml with deploy key
+* Change {{ DOCKER_REDENTIAL }} in namespaces/secret.yaml with your images registry credential
+Registry credential example:
+```json
+{
+	"auths": {
+		"https://index.docker.io/v1/": {
+			"auth": "bHVhbm5nb21pbmg6NmQxNjdmZTktNTk0Yy00N2RlLWEwYzAtZTlhNTkyOTViZmNk"
+		}
+	},
+	"HttpHeaders": {
+		"User-Agent": "Docker-Client/19.03.5-ce (linux)"
+	}
+}
+```
