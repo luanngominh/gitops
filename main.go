@@ -22,7 +22,7 @@ func main() {
 
 	http.HandleFunc("/healthz", func(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusOK)
-		res.Write([]byte("Version 0.0.3"))
+		res.Write([]byte("Version 0.0.5"))
 	})
 
 	errs := make(chan error)
