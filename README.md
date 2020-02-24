@@ -3,3 +3,7 @@
 
 <br/>
 Sample project, using flux to delivery app to kubernetes cluster
+
+# Usage
+* Create docker registry secret: sh run.sh
+* Change {{ DEPLOY_KEY }} in flux.yaml with deploy key
