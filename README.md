@@ -5,9 +5,8 @@
 Sample project, using flux to delivery app to kubernetes cluster
 
 # Usage
-* Change {{ DEPLOY_KEY }} in flux.yaml with deploy key
-* Change {{ DOCKER_REDENTIAL }} in namespaces/secret.yaml with your images registry credential
-Registry credential example:
+* Change {{ DEPLOY_KEY }} in flux.yaml with private key
+* Change {{ DOCKER_REDENTIAL }} in namespaces/secret.yaml with your images registry credential. Registry credential example:
 ```json
 {
 	"auths": {
